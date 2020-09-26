@@ -1,0 +1,34 @@
+[{
+ "id":1,
+ "name": "Thriller",
+ "artist":"Michael Jackson",
+ "price": "$9.64"
+},
+{
+    "id":2,
+    "name": "Letter To You",
+    "artist":"Bruce Sprignsteen",
+    "price": "$13.98"
+
+},
+{
+    "id":3,
+    "name": "Abbey Road Anniversary",
+    "artist":"Beatles",
+    "price": "$19.99"
+
+},
+{
+    "id":4,
+    "name": "The Dark Side of the Moon",
+    "artist":"Pink Floyd",
+    "price": "$28.05"
+
+},
+{
+    "id":5,
+    "name": "Ultimate Sinatra",
+    "artist":"Frank Sinatra",
+    "price": "$39.98"
+
+}]
