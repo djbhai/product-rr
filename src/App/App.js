@@ -36,7 +36,7 @@ class App extends React.Component {
                                 <PrivateRoute exact  path="/" component={ProductsList} />
                                 <Route  path="/login" component={LoginPage}/>
                                 <Route  path="/register" component={RegisterPage} />
-                                <PrivateRoute path="/product:" component={ProductDetails}/>
+                                <PrivateRoute path="/product:id" component={ProductDetails}/>
                                 <Redirect from="*" to="/"/>
                             </Switch>
                         </Router>

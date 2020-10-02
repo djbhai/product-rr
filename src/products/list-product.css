@@ -26,15 +26,21 @@
 }
 
 .product-text-details{
+    display:inline-block;
     padding:10px;
     position:relative;
-    left:10px;
-    bottom:50px;
+    left:250px;
+    bottom:250px;
+    width:500px;
 }
 
-.product-image-details{
-    float:left;
+.product-details{
+    text-align: justify;
 }
+
+/*.product-image-details{
+    float:left;
+}*/
 
 .product-border-details{
     border:1px solid #eee;

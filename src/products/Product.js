@@ -5,9 +5,9 @@ import './list-product.css';
 class Product extends React.Component{
     constructor(props){
         super(props);
-        
+       
     }
-
+  
     render(){
         const showDetails=('details' in this.props);
         const productDetails= this.props;
@@ -18,11 +18,19 @@ class Product extends React.Component{
                 <img className={showDetails?"product-image-details":
                 "product-image"} src={"productImages/"+this.props.img}/> <br/>
                 <div className={showDetails?"product-text-details":"product-text"}>
-                    <Link to={{pathname:"/login"/*productDetails.id*/
-                     /*state:{product:productDetails}*/}}> <h3> {this.props.name}</h3> </Link>
+                    <Link to={{pathname:"/product:"+productDetails.id,
+                    state:{product:{id:productDetails.id,name:productDetails.name,
+                    cost:productDetails.cost,artist:productDetails.artist}}}
+                }> <h3> {this.props.name}</h3> </Link>
                     <p>{this.props.artist}</p>
                     <p>{this.props.cost}</p>
-                </div>
+                
+                    {showDetails && <div><p className="product-details"> {this.props.details} </p></div>}
+                   { !showDetails && <button className="btn btn-primary" 
+                   onClick={()=>this.props.compare(this.props)} >Compare</button>}
+                   
+                   </div>
+                
                 </div>
                 <div className={showDetails?"product-border":"product-border-details"}> 
                 </div>

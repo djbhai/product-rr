@@ -2,7 +2,8 @@ import { authHeader } from '../_helpers';
 import { authenticationService } from '../_services';
 
 export const productsService ={
-  getProducts
+  getProducts,
+  getProductDetails
 };
 
 function getProducts(){
@@ -12,6 +13,14 @@ function getProducts(){
     };
 
     return fetch(`/products`, requestOptions).then(handleResponse);
+}
+
+function getProductDetails(id){
+    const requestOptions={
+        method:'GET',
+        headers: authHeader()
+    };
+    return fetch(`/productDetails/${id}`,requestOptions).then(handleResponse);
 }
 
 function handleResponse(response){

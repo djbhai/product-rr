@@ -139,6 +139,20 @@ export function configureFakeBackend() {
 
                 }// get product by id
 
+                if(url.match(/\/productDetails\/\d+$/) && opts.method=="GET"){
+                    if (opts.headers && opts.headers.Authorization === 'Bearer fake-jwt-token') {
+                        let urlParts = url.split('/');
+                        let id = parseInt(urlParts[urlParts.length - 1]);
+                        const product = productData.filter(value=>
+                            value.id==id
+                        );
+                    resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(product[0].details))});
+                        }
+                    else{
+                        reject('Unauthorised');
+                    }
+                }
+
                 // pass through any requests not handled above
                 realFetch(url, opts).then(response => resolve(response));
 
