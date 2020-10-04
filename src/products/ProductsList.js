@@ -82,10 +82,16 @@ removeItem(product){
 compare(product){
     let prod1 = this.state.cart.prod1;
     let prod2 = this.state.cart.prod2;
-    if(product== prod1 || product==prod2){
-        return;
+
+    if(prod1 !=null){
+        if(product.id == prod1.id)
+            return;
     }
-    else if(prod1!=null && prod2!=null){
+    if(prod2 !=null){
+        if(product.id == prod2.id)
+            return;
+    }
+    if(prod1!=null && prod2!=null){
         return;
     }
     else{
