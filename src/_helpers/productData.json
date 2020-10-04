@@ -3,6 +3,9 @@
  "name": "Thriller",
  "artist":"Michael Jackson",
  "price": "$9.64",
+ "genre": "Pop",
+ "rating": 5,
+ "copies_sold":"66 million",
  "details": "Thriller is the sixth studio album by American singer Michael Jackson, released on November 30, 1982 by Epic Records. Reunited with Off the Wall producer Quincy Jones, Jackson was inspired to create an album where \"every song was a killer\". With the ongoing backlash against disco, Jackson moved in a new musical direction, incorporating pop, post-disco, rock and funk. Thriller foreshadows the contradictory themes of Jackson's personal life, as he began using a motif of paranoia and darker themes."
 },
 {
@@ -10,6 +13,9 @@
     "name": "Letter To You",
     "artist":"Bruce Sprignsteen",
     "price": "$13.98",
+    "genre": "Rock",
+    "rating": 4,
+    "copies_sold": "4 million",
     "details":"Letter to You is the upcoming twentieth studio album from Bruce Springsteen and it marks his first album with his regular backing band the E Street Band since 2014's High Hopes."
 },
 {
@@ -17,6 +23,9 @@
     "name": "Abbey Road Anniversary",
     "artist":"Beatles",
     "price": "$19.99",
+    "genre": "Rock",
+    "rating": 5,
+    "copies_sold":"30 million",
     "details":"Abbey Road is the eleventh studio album by the English rock band the Beatles, released on 26 September 1969 by Apple Records. Named after the location of EMI Studios in London, the cover features the group walking across the street's zebra crossing, an image that became one of the most famous and imitated in popular music."
 },
 {
@@ -24,6 +33,9 @@
     "name": "The Dark Side of the Moon",
     "artist":"Pink Floyd",
     "price": "$28.05",
+    "genre": "Rock",
+    "rating": 4.5,
+    "copies_sold":"45 million",
     "details": "The Dark Side of the Moon is the eighth studio album by English rock band Pink Floyd, released on 1 March 1973 by Harvest Records. Primarily developed during live performances, the band premiered an early version of the record several months before recording began"
 },
 {
@@ -31,6 +43,8 @@
     "name": "Ultimate Sinatra",
     "artist":"Frank Sinatra",
     "price": "$39.98",
+    "genre": "Jazz",
+    "rating": 4,
+    "copies_sold": "2 million",
     "details":"Ultimate Sinatra is a 2015 compilation album by American singer Frank Sinatra released specifically to commemorate the 100-year anniversary of his birth."
-
 }]

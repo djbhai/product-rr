@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
 import { PrivateRoute } from '../_routes';
-import { ProductsList, ProductDetails } from '../products';
+import { ProductsList, ProductDetails, Compare } from '../products';
 import { LoginPage } from '../login';
 import { RegisterPage } from '../register';
 
@@ -37,6 +37,7 @@ class App extends React.Component {
                                 <Route  path="/login" component={LoginPage}/>
                                 <Route  path="/register" component={RegisterPage} />
                                 <PrivateRoute path="/product:id" component={ProductDetails}/>
+                                <PrivateRoute path="/compare" component={Compare}/>
                                 <Redirect from="*" to="/"/>
                             </Switch>
                         </Router>

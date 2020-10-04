@@ -1,0 +1,15 @@
+td{
+ padding:10px;
+}
+
+.text-rows{
+    border:1px solid #eaeaea;
+    border-radius:4px;
+    background-color: #f6f6f6;
+}
+
+
+
+.row-heading{
+    font-weight: bold;
+}

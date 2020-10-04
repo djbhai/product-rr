@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './cart-style.css';
 
 export class Cart extends React.Component{
@@ -12,6 +13,7 @@ export class Cart extends React.Component{
         true: false;
         const atleastOne = this.props.prod1!=null || this.props.prod2!=null;
         if(atleastOne){*/
+        console.log(this.props.cart.prod1);
         let maxSize = this.props.maxSize;
         let height = ((maxSize/6)*15) + 50; //((maxSize%6>0 && maxSize>6)?15:0)
        return (<div className="cart">
@@ -42,8 +44,17 @@ export class Cart extends React.Component{
             </div> }
             <input className="refresh-image" type="image" src={"productImages/refresh.png"}
             onClick={()=>this.props.refresh()}/>
-            <input className="compare-image" type="image" src={"productImages/compare.png"}
-            onClick={()=>"b"}/>
+            {/*<input className="compare-image" type="image" src={"productImages/compare.png"}
+            onClick={()=>"b"}/>*/}
+            { this.props.cart.prod1 && this.props.cart.prod2 &&
+             <Link to={{pathname:"/compare",
+                    state:{prod1:{img:this.props.cart.prod1.img,genre:
+                    this.props.cart.prod1.genre,copies_sold:this.props.cart.prod1.copies_sold,
+                    rating:this.props.cart.prod1.rating},prod2:{img:this.props.cart.prod2.img,genre:
+                        this.props.cart.prod2.genre,copies_sold:this.props.cart.prod2.copies_sold,
+                        rating:this.props.cart.prod2.rating}}}}>
+                <img src={"productImages/compare.png"} className="compare-image"/>
+            </Link>}
             {/*<button className="cart-button2 refresh-image" onClick={()=>this.props.refresh()}>
             </button>*/}
             {/*<button className="cart-button2 compare-image" onClick={()=>"b"}></button>*/}

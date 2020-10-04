@@ -51,9 +51,6 @@ refreshCart(){
 }// refresh cart
 
 
-
-
-
 removeItem(product){
     let prodNo;
     let inCart;
@@ -136,6 +133,8 @@ render(){
                img={value.name.replaceAll(" ","_")+".jpg"} 
                name={ value.name}
                cost={value.price} artist={value.artist} 
+               genre={value.genre} rating={value.rating}
+               copies_sold={value.copies_sold}
                compare={this.compare}/>
                )
             })}

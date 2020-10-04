@@ -123,6 +123,7 @@ export function configureFakeBackend() {
 
                 if(url.endsWith("/products") && opts.method=="GET"){
                     resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(productData))});
+                    console.log(productData);
                     return;
 
                 }// get all products
