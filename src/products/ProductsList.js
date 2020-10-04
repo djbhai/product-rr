@@ -103,7 +103,6 @@ compare(product){
             })
         }
       else if(prod2==null){
-          console.log("prod2");
         this.setState((state)=>{
             return{
                 ...state.products,

@@ -21,8 +21,6 @@ class ProductDetails extends React.Component{
     }
 
     render(){
-        console.log("Here");
-        console.log(this.props.location);
         const {product} =this.props.location.state;
         return(
             <Product id={product.id} 

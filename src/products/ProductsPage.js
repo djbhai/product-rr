@@ -18,7 +18,6 @@ export class ProductsPage extends React.Component{
     }
 
     componentWillMount(){
-        console.log("product page");
         setTimeout(()=>{
             productsService.getProducts().then((value)=>{
                 this.setState({
@@ -48,11 +47,4 @@ export class ProductsPage extends React.Component{
 
 }
 
-/*
-render={() => (
-    <ProductsList data={ this.state.products }/>
-    )}*/
-/*<Switch>
-            <PrivateRoute path="/" 
-            data={this.state.products} component={ ProductsList }  />
-        </Switch>*/
+
