@@ -1,0 +1,17 @@
+.head-style{
+    position:fixed;
+    width:50%;
+    z-index:3;
+    height:50px;
+    background-color: white;
+}
+
+.head-images{
+    float: right;
+    height:20px;
+    width:20px;
+}
+
+.products-style{
+    padding-top:50px;
+}

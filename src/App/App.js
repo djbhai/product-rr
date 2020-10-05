@@ -8,6 +8,8 @@ import { PrivateRoute } from '../_routes';
 import { ProductsList, ProductDetails, Compare } from '../products';
 import { LoginPage } from '../login';
 import { RegisterPage } from '../register';
+import { addHeader } from '../_header';
+import './app.css';
 
 class App extends React.Component {
     constructor(props) {
@@ -25,7 +27,7 @@ class App extends React.Component {
     render() {
         const { alert } = this.props;
         return (
-            <div className="jumbotron" style={{backgroundColor:"white"}}>
+            <div className="jumbotron custom-jumbotron" style={{backgroundColor:"white"}}>
                 <div className="container">
                     <div className="col-sm-8 col-sm-offset-2">
                         {alert.message &&
@@ -33,11 +35,11 @@ class App extends React.Component {
                         }
                         <Router history={history}>
                            <Switch>
-                                <PrivateRoute exact  path="/" component={ProductsList} />
+                                <PrivateRoute exact  path="/" component={addHeader(ProductsList)} />
                                 <Route  path="/login" component={LoginPage}/>
                                 <Route  path="/register" component={RegisterPage} />
-                                <PrivateRoute path="/product:id" component={ProductDetails}/>
-                                <PrivateRoute path="/compare" component={Compare}/>
+                                <PrivateRoute path="/product:id" component={addHeader(ProductDetails)}/>
+                                <PrivateRoute path="/compare" component={addHeader(Compare)}/>
                                 <Redirect from="*" to="/"/>
                             </Switch>
                         </Router>
