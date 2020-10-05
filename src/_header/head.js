@@ -13,12 +13,12 @@ export function addHeader(ProductComponent){
             return (
             <div>
             <div className="head-style">
+            <Link to="/product"> 
+            <img className="head-images" src="productImages/home.png"/>
+            </Link>
             <Link to="/login" onClick={this.logout}  
             >
             <img className="head-images" src="productImages/logout.png"/>
-            </Link>
-            <Link to="/product"> 
-            <img className="head-images" src="productImages/home.png"/>
             </Link>
             </div>
             <div className="products-style">

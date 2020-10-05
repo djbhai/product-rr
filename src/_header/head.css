@@ -7,9 +7,10 @@
 }
 
 .head-images{
-    float: right;
+    
     height:20px;
     width:20px;
+    margin:5px;
 }
 
 .products-style{
