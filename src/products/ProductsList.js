@@ -86,14 +86,14 @@ compare(product){
     if(prod1 !=null){
         if(product.id == prod1.id)
             return;
-    }
+    }// check if product to be compared already exists.
     if(prod2 !=null){
         if(product.id == prod2.id)
             return;
     }
     if(prod1!=null && prod2!=null){
         return;
-    }
+    }// if the comparision already contains two items return.
     else{
         
         if(prod1==null){
@@ -119,8 +119,8 @@ compare(product){
                 }
             }
         })
-      }
-    }
+     }
+    }// check for the product property that is null to add the product. 
 }
 
 render(){
