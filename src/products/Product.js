@@ -26,7 +26,7 @@ class Product extends React.Component{
                     <p>{this.props.cost}</p>
                 
                     {showDetails && <div><p className="product-details"> {this.props.details} </p></div>}
-                   { !showDetails && <button className="btn btn-primary" 
+                   { !showDetails && <button className="btn  compare-button" 
                    onClick={()=>this.props.compare(this.props)} >Compare</button>}
                    
                    </div>
