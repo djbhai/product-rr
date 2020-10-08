@@ -11,13 +11,17 @@ class ProductDetails extends React.Component{
         this.state={
             details:null
         };
-        setTimeout(()=>{
+        this.timer=setTimeout(()=>{
             productsService.getProductDetails(id).then((value)=>{
                 this.setState({
                     details:value
                 })
             })
         })
+    }
+
+    componentWillUnmount(){
+        clearTimeout(this.timer);
     }
 
     render(){

@@ -5,7 +5,6 @@ import './list-product.css';
 class Product extends React.Component{
     constructor(props){
         super(props);
-       
     }
   
     render(){
@@ -24,7 +23,7 @@ class Product extends React.Component{
                 }> <h3> {this.props.name}</h3> </Link>
                     <p>{this.props.artist}</p>
                     <p>{this.props.cost}</p>
-                
+
                     {showDetails && <div><p className="product-details"> {this.props.details} </p></div>}
                    { !showDetails && <button className="btn  compare-button" 
                    onClick={()=>this.props.compare(this.props)} >Compare</button>}

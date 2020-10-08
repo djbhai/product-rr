@@ -79,6 +79,27 @@ removeItem(product){
     }
 }// remove item from cart
 
+compare2(product){
+    if(product.id in this.state.cart){
+        return;
+    }
+    if(Object.keys(this.state.cart).length==2){
+        return;
+    }
+    else{
+        this.setState((state)=>{
+            return{
+                ...state.products,
+                ...state.maxSize,
+                cart:{
+                    ...state.cart,
+                    product
+                }
+            }
+        })
+    }
+}
+
 compare(product){
     let prod1 = this.state.cart.prod1;
     let prod2 = this.state.cart.prod2;
