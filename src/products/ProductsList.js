@@ -12,8 +12,7 @@ constructor(props){
     this.state={
         products:[],
         cart:{
-            prod1:null,
-            prod2:null
+           
         }
         };
     setTimeout(()=>{
@@ -26,8 +25,7 @@ constructor(props){
             this.setState({
                 products: value,
                 cart:{
-                    prod1:null,
-                    prod2:null
+                  
                 },
                 maxSize: maxSize
             })
@@ -39,53 +37,36 @@ constructor(props){
     this.compare = this.compare.bind(this);
 }
 
+
+
 refreshCart(){
-    this.setState((state)=>{return {
+    this.setState((state)=>{
+        return{
         ...state.products,
         ...state.maxSize,
         cart:{
-            prod1:null,
-            prod2:null
-        }
-    }});
-}// refresh cart
 
+        }
+        }
+    })
+}// remove all products from the cart.
 
 removeItem(product){
-    let prodNo;
-    let inCart;
-    prodNo= this.state.cart.prod1==product? 1: 2;
-    if(prodNo==2){
-        inCart =this.state.cart.prod1;
-        this.setState((state)=>{return {
-            ...state.products,
-            ...state.maxSize,
-            cart:{
-                prod1:inCart,
-                prod2:null
-            }
-        }})
-    }
-    else{
-        inCart = this.state.cart.prod2;
-        this.setState((state)=>{return {
-            ...state.products,
-            ...state.maxSize,
-            cart:{
-                prod1:null,
-                prod2:inCart
-            }
-        }});
-    }
-}// remove item from cart
+    this.setState((state)=>{
+         delete state.cart[product.id];
+         return{
+            state
+        }
+    });
+}// remove product from the cart.
 
-compare2(product){
+compare(product){
     if(product.id in this.state.cart){
         return;
-    }
+    }// don't add if the item is already in the cart
     if(Object.keys(this.state.cart).length==2){
         return;
-    }
+    } // don't add items if the cart already contains 2 items
     else{
         this.setState((state)=>{
             return{
@@ -93,78 +74,35 @@ compare2(product){
                 ...state.maxSize,
                 cart:{
                     ...state.cart,
-                    product
+                    [product.id]: product
                 }
             }
         })
-    }
+    }// otherwise add item if product to the cart using the product id as the key.
 }
 
-compare(product){
-    let prod1 = this.state.cart.prod1;
-    let prod2 = this.state.cart.prod2;
-
-    if(prod1 !=null){
-        if(product.id == prod1.id)
-            return;
-    }// check if product to be compared already exists.
-    if(prod2 !=null){
-        if(product.id == prod2.id)
-            return;
-    }
-    if(prod1!=null && prod2!=null){
-        return;
-    }// if the comparision already contains two items return.
-    else{
-        
-        if(prod1==null){
-            this.setState((state)=>{
-                return{
-                    ...state.products,
-                    ...state.maxSize,
-                    cart:{
-                        prod1:product,
-                        prod2:state.cart.prod2
-                    }
-                }
-            })
-        }
-      else if(prod2==null){
-        this.setState((state)=>{
-            return{
-                ...state.products,
-                ...state.maxSize,
-                cart:{
-                    prod1:state.cart.prod1,
-                    prod2:product
-                }
-            }
-        })
-     }
-    }// check for the product property that is null to add the product. 
-}
 
 render(){
     const products= this.state.products;
-    let prod1= this.state.cart.prod1;
-    let prod2= this.state.cart.prod2;
-
+    let cartHasItem= false;
+    if(Object.keys(this.state.cart).length>0){
+        cartHasItem=true;
+    }
+    
     return (
         <div>
-        { (prod1||prod2) && <Cart cart={this.state.cart} removeItem={this.removeItem} 
+        { cartHasItem && <Cart cart={this.state.cart} removeItem={this.removeItem} 
         maxSize={this.state.maxSize} refresh={this.refreshCart}/>}
-        <div id="products_list">
-           { !products.length==0 && products.map((value)=>{
+            <div id="products_list">
+                { !products.length==0 && products.map((value)=>{
                return (<Product key={value.id} id={value.id} 
-               img={value.name.replaceAll(" ","_")+".jpg"} 
-               name={ value.name}
-               cost={value.price} artist={value.artist} 
-               genre={value.genre} rating={value.rating}
-               copies_sold={value.copies_sold}
-               compare={this.compare}/>
-               )
-            })}
-        </div>
+                                img={value.name.replaceAll(" ","_")+".jpg"} 
+                                name={ value.name}
+                                cost={value.price} artist={value.artist} 
+                                genre={value.genre} rating={value.rating}
+                                copies_sold={value.copies_sold}
+                                compare={this.compare}/>)})}
+            </div>
         </div>
     );
 }
