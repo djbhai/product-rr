@@ -60,6 +60,7 @@ button:hover{
     border:1px solid #f3cd6f;
     color:#53112e ;
     filter:brightness(1.2);
+    
 }
 
 button:active{
@@ -67,4 +68,8 @@ button:active{
     border:1px solid #f3cd6f ;
     color:#53112e;
     filter:brightness(1.2);
+}
+
+button:disabled{
+    cursor: pointer !important;
 }

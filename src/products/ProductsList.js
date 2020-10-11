@@ -84,9 +84,15 @@ compare(product){
 
 render(){
     const products= this.state.products;
+    const cart = this.state.cart;
     let cartHasItem= false;
-    if(Object.keys(this.state.cart).length>0){
+    const cartSize= Object.keys(cart).length;
+    let  cartFull = false;
+    if(cartSize>0){
         cartHasItem=true;
+        if(cartSize==2){
+            cartFull=true;
+        }
     }
     
     return (
@@ -101,7 +107,10 @@ render(){
                                 cost={value.price} artist={value.artist} 
                                 genre={value.genre} rating={value.rating}
                                 copies_sold={value.copies_sold}
-                                compare={this.compare}/>)})}
+                                compare={this.compare}
+                                disable={cart.hasOwnProperty(value.id) || cartFull}
+                                itemPresent={cart.hasOwnProperty(value.id)}
+                                cartFull={cartFull}/>)})}
             </div>
         </div>
     );
